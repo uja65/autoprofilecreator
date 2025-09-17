@@ -1,5 +1,5 @@
-                                        Auto Profile Creator
-# 🎥 Auto Profile Creator
+
+# Auto Profile Creator
 
 An **AI-powered profile builder** that scrapes public profile pages (Wikipedia, IMDb, LinkedIn if public), enriches them with **Brave Search** results, and synthesizes a structured **`schema.org/Person` JSON** using Google’s **Gemini LLM**.
 
