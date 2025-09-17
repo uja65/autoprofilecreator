@@ -1,0 +1,431 @@
+<!-- <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Auto Profile Creator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root { --bg:#0b0c10; --card:#12141a; --muted:#aab; --text:#f5f7ff; --accent:#6fc3ff; }
+    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; background: var(--bg); color: var(--text); }
+    .wrap { max-width: 860px; margin: 0 auto; padding: 40px 20px; }
+    h1 { font-weight: 700; letter-spacing: .3px; }
+    .card { background: var(--card); border-radius: 16px; padding: 20px; box-shadow: 0 6px 24px rgba(0,0,0,.3); }
+    label { display:block; margin: 12px 0 6px; color: var(--muted); font-size: 14px; }
+    input { width:100%; padding:12px 14px; border-radius: 12px; border:1px solid #252833; background:#0e1016; color:var(--text); }
+    button { margin-top:16px; padding:12px 16px; background: var(--accent); color:#00121f; border:none; border-radius:12px; font-weight:700; cursor:pointer; }
+    button:disabled { opacity:.6; cursor:not-allowed; }
+    .row { display:grid; grid-template-columns: 1fr; gap: 12px; }
+    .muted { color: var(--muted); font-size: 13px; }
+    .result { margin-top: 24px; }
+    pre { background:#0e1016; border:1px solid #232637; border-radius:12px; padding:16px; overflow:auto; }
+    .grid { display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; }
+    @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } }
+    .pill { display:inline-block; padding:4px 8px; border-radius:999px; background:#0e1016; border:1px solid #232637; margin-right:6px; margin-bottom:6px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>🔎 Auto Profile Creator</h1>
+    <p class="muted">Paste a public profile URL (e.g., Wikipedia/IMDb) and an industry. We’ll scrape, search, and synthesize a <code>schema.org/Person</code> JSON.</p>
+
+    <div class="card">
+      <div class="row">
+        <div>
+          <label for="url">Profile URL</label>
+          <input id="url" placeholder="https://en.wikipedia.org/wiki/Emma_Watson">
+        </div>
+        <div>
+          <label for="industry">Industry Context</label>
+          <input id="industry" placeholder="film">
+        </div>
+      </div>
+      <button id="runBtn">Generate Profile</button>
+      <div id="status" class="muted" style="margin-top:10px;"></div>
+    </div>
+
+    <div id="output" class="result" style="display:none;">
+      <div class="card">
+        <h2>Result (Summary)</h2>
+        <div id="summary"></div>
+      </div>
+
+      <div class="card" style="margin-top:16px;">
+        <h2>Raw JSON</h2>
+        <pre id="json"></pre>
+        <a id="downloadLink" href="/profile.json" download="profile.json">⬇️ Download profile.json</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const runBtn = document.getElementById('runBtn');
+    const statusEl = document.getElementById('status');
+    const outputEl = document.getElementById('output');
+    const jsonEl = document.getElementById('json');
+    const summaryEl = document.getElementById('summary');
+    const downloadLink = document.getElementById('downloadLink');
+
+    function renderSummary(profile, stats) {
+      const name = profile?.name || '(unknown)';
+      const job = Array.isArray(profile?.jobTitle) ? profile.jobTitle.join(', ') : (profile?.jobTitle || '');
+      const desc = profile?.description || '';
+      const sameAs = Array.isArray(profile?.sameAs) ? profile.sameAs.slice(0,6) : [];
+
+      const performerIn = Array.isArray(profile?.performerIn) ? profile.performerIn.slice(0,6) : [];
+            let imgUrl = null;
+            if (typeof profile?.image === 'string') {
+            imgUrl = profile.image;
+            } else if (profile?.image?.contentUrl) {
+            imgUrl = profile.image.contentUrl;
+            }
+      summaryEl.innerHTML = `
+        <p><strong>Name:</strong> ${name}</p>
+    ${imgUrl ? `<div style="margin:12px 0;"><img src="${imgUrl}" alt="${name}" style="max-width:180px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,.4);" /></div>` : ''}
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Job Title:</strong> ${job}</p>
+        <p><strong>Description:</strong> ${desc}</p>
+        ${sameAs.length ? `<p><strong>Links:</strong><br/> ${sameAs.map(u => `<span class="pill">${u}</span>`).join(' ')}</p>` : ''}
+        ${performerIn.length ? `<p><strong>Works:</strong><br/> ${performerIn.map(w => `<span class="pill">${w?.name || ''}</span>`).join(' ')}</p>` : ''}
+        ${stats ? `<p class="muted">Sources found: ${stats.secondarySourcesFound} · Scraped: ${stats.secondarySourcesScraped}</p>` : ''}
+      `;
+    }
+
+    runBtn.addEventListener('click', async () => {
+      const url = document.getElementById('url').value.trim();
+      const industry = document.getElementById('industry').value.trim();
+      if (!url || !industry) {
+        statusEl.textContent = 'Please provide both URL and industry.';
+        return;
+      }
+      runBtn.disabled = true;
+      statusEl.textContent = 'Working… this can take a minute.';
+      outputEl.style.display = 'none';
+      jsonEl.textContent = '';
+      summaryEl.innerHTML = '';
+
+      try {
+        const res = await fetch('/api/run', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ url, industry })
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data?.error || 'Request failed');
+
+        statusEl.textContent = 'Done.';
+        outputEl.style.display = 'block';
+        jsonEl.textContent = JSON.stringify(data.finalProfile, null, 2);
+        renderSummary(data.finalProfile, data.stats);
+
+        // refresh download link (server saves to /profile.json at project root)
+        downloadLink.href = '/profile.json';
+      } catch (e) {
+        statusEl.textContent = 'Error: ' + (e?.message || e);
+      } finally {
+        runBtn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
+-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Auto Profile Creator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    /* --- Professional dark theme --- */
+    :root {
+      --bg: #000000;          /* Pure black background */
+      --surface: #121212;     /* Elevated cards */
+      --surface-2: #0d0d0d;   /* Panels */
+      --border: #1f1f1f;      /* Subtle borders */
+      --text: #f2f2f2;        /* Primary text */
+      --muted: #9aa0a6;       /* Secondary text */
+      --accent: #7aa7ff;      /* Soft blue accent */
+      --accent-2: #9ec9ff;    /* Lighter accent for focus/hover */
+      --shadow: rgba(0, 0, 0, 0.4);
+      --radius: 16px;
+    }
+
+    /* Reset-ish */
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.45;
+    }
+
+    /* Center the main card vertically & horizontally */
+    .wrap {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+
+    .subtle {
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: 0 8px 24px var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    /* Input card centered as the primary focus */
+    .hero {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin: 8px 0 6px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--surface-2);
+      color: var(--text);
+      transition: border-color 120ms ease, box-shadow 120ms ease;
+      outline: none;
+    }
+    input::placeholder { color: #6b7280; }
+    input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px rgba(122, 167, 255, 0.15);
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 0.7fr;
+      gap: 12px;
+    }
+    @media (max-width: 720px) { .row { grid-template-columns: 1fr; } }
+
+    button {
+      margin-top: 16px;
+      padding: 12px 16px;
+      background: var(--accent);
+      color: #0a0a0a;
+      border: none;
+      border-radius: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 120ms ease, background 120ms ease, box-shadow 120ms ease;
+      box-shadow: 0 8px 18px rgba(122, 167, 255, 0.25);
+    }
+    button:hover { background: var(--accent-2); transform: translateY(-1px); }
+    button:active { transform: translateY(0); }
+    button:disabled { opacity: .6; cursor: not-allowed; transform: none; box-shadow: none; }
+
+    .muted { color: var(--muted); font-size: 13px; }
+
+    .result { margin-top: 24px; }
+
+    .section-title {
+      margin: 0 0 10px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    pre {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      overflow: auto;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      margin-right: 6px;
+      margin-bottom: 6px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+    @media (max-width: 720px) {
+      .summary-grid { grid-template-columns: 1fr; }
+    }
+
+    .avatar {
+      width: 160px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px var(--shadow);
+      border: 1px solid var(--border);
+      background: #0a0a0a;
+      object-fit: cover;
+    }
+
+    .download {
+      display: inline-block;
+      margin-top: 10px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .download:hover { color: var(--accent-2); }
+
+    .header {
+      margin-bottom: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="container">
+      <div class="header" style="text-align:center;">
+        <h1> AI assissted Profile Portfolio Builder </h1>
+        <p class="subtle">Paste a relevant url and I'll do the building!</p>
+      </div>
+
+      <!-- Centered input card -->
+      <div class="card hero">
+        <div class="row">
+          <div>
+            <label for="url">Profile URL</label>
+            <input id="url" >
+          </div>
+          <div>
+            <label for="industry">Industry Context</label>
+            <input id="industry">
+          </div>
+        </div>
+        <button id="runBtn">Generate Profile</button>
+        <div id="status" class="muted" style="margin-top:10px;"></div>
+      </div>
+
+      <!-- Results -->
+      <div id="output" class="result" style="display:none;">
+        <div class="card">
+          <h2 class="section-title">Result (Summary)</h2>
+          <div id="summary"></div>
+        </div>
+
+        <div class="card" style="margin-top:16px;">
+          <h2 class="section-title">Raw JSON</h2>
+          <pre id="json"></pre>
+          <a id="downloadLink" class="download" href="/profile.json" download="profile.json">⬇️ Download profile.json</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const runBtn = document.getElementById('runBtn');
+    const statusEl = document.getElementById('status');
+    const outputEl = document.getElementById('output');
+    const jsonEl = document.getElementById('json');
+    const summaryEl = document.getElementById('summary');
+    const downloadLink = document.getElementById('downloadLink');
+
+    function renderSummary(profile, stats) {
+      const name = profile?.name || '(unknown)';
+      const job = Array.isArray(profile?.jobTitle) ? profile.jobTitle.join(', ') : (profile?.jobTitle || '');
+      const desc = profile?.description || '';
+      const sameAs = Array.isArray(profile?.sameAs) ? profile.sameAs.slice(0, 6) : [];
+      const performerIn = Array.isArray(profile?.performerIn) ? profile.performerIn.slice(0, 6) : [];
+
+      // Handle image as string or ImageObject
+      let imgUrl = null;
+      if (typeof profile?.image === 'string') imgUrl = profile.image;
+      else if (profile?.image?.contentUrl) imgUrl = profile.image.contentUrl;
+
+      // Build summary block
+      const imageBlock = imgUrl
+        ? `<img class="avatar" src="${imgUrl}" alt="${name}" />`
+        : `<div class="avatar" style="display:flex;align-items:center;justify-content:center;color:#555;">No Image</div>`;
+
+      summaryEl.innerHTML = `
+        <div class="summary-grid">
+          <div>${imageBlock}</div>
+          <div>
+            <p style="margin:0 0 8px;"><strong>Name:</strong> ${name}</p>
+            <p style="margin:0 0 8px;"><strong>Job Title:</strong> ${job}</p>
+            <p style="margin:0 0 8px;"><strong>Description:</strong> ${desc}</p>
+            ${sameAs.length ? `<p style="margin:10px 0 0;"><strong>Links:</strong><br/> ${sameAs.map(u => `<span class="pill">${u}</span>`).join(' ')}</p>` : ''}
+            ${performerIn.length ? `<p style="margin:10px 0 0;"><strong>Works:</strong><br/> ${performerIn.map(w => `<span class="pill">${w?.name || ''}</span>`).join(' ')}</p>` : ''}
+            ${stats ? `<p class="muted" style="margin:10px 0 0;">Sources found: ${stats.secondarySourcesFound} · Scraped: ${stats.secondarySourcesScraped}</p>` : ''}
+          </div>
+        </div>
+      `;
+    }
+
+    runBtn.addEventListener('click', async () => {
+      const url = document.getElementById('url').value.trim();
+      const industry = document.getElementById('industry').value.trim();
+      if (!url || !industry) {
+        statusEl.textContent = 'Please provide both URL and industry.';
+        return;
+      }
+      runBtn.disabled = true;
+      statusEl.textContent = 'Working… this can take a minute.';
+      outputEl.style.display = 'none';
+      jsonEl.textContent = '';
+      summaryEl.innerHTML = '';
+
+      try {
+        const res = await fetch('/api/run', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ url, industry })
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data?.error || 'Request failed');
+
+        statusEl.textContent = 'Done.';
+        outputEl.style.display = 'block';
+        jsonEl.textContent = JSON.stringify(data.finalProfile, null, 2);
+        renderSummary(data.finalProfile, data.stats);
+
+        // refresh download link (server saves to /profile.json at project root)
+        downloadLink.href = '/profile.json';
+      } catch (e) {
+        statusEl.textContent = 'Error: ' + (e?.message || e);
+      } finally {
+        runBtn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>

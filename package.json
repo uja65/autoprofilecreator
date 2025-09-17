@@ -1,0 +1,13 @@
+{
+   "scripts": {
+      "start": "node server.js",
+      "cli": "node src/index.js"
+   },
+   "dependencies": {
+      "@google/genai": "^1.19.0",
+      "axios": "^1.12.1",
+      "cheerio": "^1.1.2",
+      "dotenv": "^17.2.2",
+      "express": "^5.1.0"
+   }
+}
