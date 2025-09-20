@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Profile · Auto Profile Creator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="/styles.css"/>
+</head>
+<body>
+  <div class="container">
+    <div class="card header">
+      <img id="avatar" class="avatar" alt="profile photo"/>
+      <div class="hgroup">
+        <div class="title" id="personName">Loading…</div>
+        <div class="subtitle" id="roles"></div>
+        <div class="tags" id="links"></div>
+      </div>
+    </div>
+
+    <div class="card layout">
+      <!-- left meta -->
+      <aside class="meta">
+        <div class="section">
+          <h3 style="margin:0 0 12px;">About</h3>
+          <p id="bio" class="subtitle" style="margin:0;"></p>
+        </div>
+        <div class="section">
+          <h3 style="margin:0 0 12px;">Details</h3>
+          <dl>
+            <dt>Born</dt><dd id="born">—</dd>
+            <dt>Nationality</dt><dd id="nationality">—</dd>
+            <dt>Location</dt><dd id="location">—</dd>
+          </dl>
+        </div>
+      </aside>
+
+      <!-- right tabs -->
+      <section>
+        <div class="tabbar">
+          <button class="tab active" data-tab="credits">Credits</button>
+          <button class="tab" data-tab="projects">Projects</button>
+          <button class="tab" data-tab="episodes">Episodes</button>
+          <button class="tab" data-tab="engagements">Engagements</button>
+        </div>
+
+        <div id="panel-credits" class="panel"></div>
+        <div id="panel-projects" class="panel" style="display:none"></div>
+        <div id="panel-episodes" class="panel" style="display:none"></div>
+        <div id="panel-engagements" class="panel" style="display:none"></div>
+        <div class="footerNote">generated from scraped sources + LLM synthesis</div>
+      </section>
+    </div>
+  </div>
+
+  <script src="/profile.js"></script>
+</body>
+</html>

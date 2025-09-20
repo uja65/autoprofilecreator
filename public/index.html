@@ -128,7 +128,7 @@
   </script>
 </body>
 </html>
--->
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -319,7 +319,7 @@
         <p class="subtle">Paste a relevant url and I'll do the building!</p>
       </div>
 
-      <!-- Centered input card -->
+     
       <div class="card hero">
         <div class="row">
           <div>
@@ -335,7 +335,7 @@
         <div id="status" class="muted" style="margin-top:10px;"></div>
       </div>
 
-      <!-- Results -->
+     
       <div id="output" class="result" style="display:none;">
         <div class="card">
           <h2 class="section-title">Result (Summary)</h2>
@@ -351,7 +351,7 @@
     </div>
   </div>
 
-  <script>
+ <script>
     const runBtn = document.getElementById('runBtn');
     const statusEl = document.getElementById('status');
     const outputEl = document.getElementById('output');
@@ -424,6 +424,100 @@
         statusEl.textContent = 'Error: ' + (e?.message || e);
       } finally {
         runBtn.disabled = false;
+      }
+    });
+  </script>
+   public/index.html (only the script tag changes at bottom) 
+<script>
+  const runBtn = document.getElementById('runBtn');
+  const statusEl = document.getElementById('status');
+
+  runBtn.addEventListener('click', async () => {
+    const url = document.getElementById('url').value.trim();
+    const industry = document.getElementById('industry').value.trim();
+    if (!url || !industry) {
+      statusEl.textContent = 'Please provide both URL and industry.';
+      return;
+    }
+    runBtn.disabled = true;
+    statusEl.textContent = 'Working… this can take a minute.';
+
+    try {
+      const res = await fetch('/api/run', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ url, industry })
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data?.error || 'Request failed');
+
+      // NEW: redirect to the profile page rendered from saved JSON
+      window.location.href = `/profile.html?id=${encodeURIComponent(data.id)}`;
+    } catch (e) {
+      statusEl.textContent = 'Error: ' + (e?.message || e);
+    } finally {
+      runBtn.disabled = false;
+    }
+  });
+</script>
+
+</body>
+</html>
+-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Auto Profile Creator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="/styles.css"/>
+</head>
+<body>
+  <div class="container">
+    <div class="card center" style="padding:28px;max-width:720px;margin:40px auto;">
+      <div style="width:100%;max-width:520px;">
+        <h1 style="margin:0 0 8px;">create a Tabb-style profile</h1>
+        <p class="subtitle">paste a public profile (Wikipedia / IMDb / LinkedIn) and an industry (e.g. film)</p>
+        <div style="display:grid;gap:12px;margin-top:16px;">
+          <input id="url" class="input" placeholder="https://en.wikipedia.org/wiki/Emma_Watson"/>
+          <input id="industry" class="input" placeholder="film"/>
+          <button id="go" class="btn">Generate</button>
+          <div id="status" class="footerNote"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const go = document.getElementById('go');
+    const statusEl = document.getElementById('status');
+    function slugify(str=''){
+      return str.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
+    }
+    go.addEventListener('click', async () => {
+      const url = document.getElementById('url').value.trim();
+      const industry = document.getElementById('industry').value.trim();
+      if(!url || !industry){ statusEl.textContent='please fill both fields.'; return; }
+      statusEl.textContent='working…';
+      go.disabled = true;
+      try{
+        const res = await fetch('/api/run', {
+          method:'POST', headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({ url, industry })
+        });
+        const data = await res.json();
+        if(!res.ok) throw new Error(data?.error || 'request failed');
+
+        // stash result so profile page can render immediately
+        sessionStorage.setItem('latestProfile', JSON.stringify(data.finalProfile || {}));
+        const name = data?.finalProfile?.name || 'profile';
+        const slug = slugify(name);
+        // also expose a canonical url if you later save by slug
+        window.location.href = `/profile.html?slug=${encodeURIComponent(slug)}`;
+      }catch(e){
+        statusEl.textContent = 'error: ' + (e?.message||e);
+      }finally{
+        go.disabled = false;
       }
     });
   </script>

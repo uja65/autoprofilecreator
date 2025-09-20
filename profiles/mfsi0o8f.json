@@ -1,0 +1,157 @@
+{
+  "@context": "https://schema.org/",
+  "@type": "Person",
+  "name": "Leonardo DiCaprio",
+  "description": "American actor and film producer known for his work in biographical and period films. Recipient of numerous accolades, including an Academy Award, a British Academy Film Award, and three Golden Globe Awards.",
+  "jobTitle": "Actor, Film Producer",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Leonardo_DiCaprio_crop_%28cropped%29.jpg/250px-Leonardo_DiCaprio_crop_%28cropped%29.jpg",
+  "sameAs": [
+    "https://en.wikipedia.org/wiki/Leonardo_DiCaprio",
+    "https://www.imdb.com/name/nm0000136/"
+  ],
+  "birthDate": "1974-11-11",
+  "birthPlace": "Los Angeles, California, USA",
+  "knowsAbout": [
+    "Environmental Awareness",
+    "Film Production",
+    "Acting"
+  ],
+  "award": [
+    "Academy Award",
+    "British Academy Film Award",
+    "Golden Globe Award"
+  ],
+  "performerIn": [
+    {
+      "@type": "CreativeWork",
+      "name": "Titanic",
+      "startDate": "1997",
+      "url": "https://www.imdb.com/title/tt0120338/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "The Wolf of Wall Street",
+      "startDate": "2013",
+      "url": "https://www.imdb.com/title/tt0993846/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "The Revenant",
+      "startDate": "2015",
+      "url": "https://www.imdb.com/title/tt1663202/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Once Upon a Time in Hollywood",
+      "startDate": "2019",
+      "url": "https://www.imdb.com/title/tt7131622/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Growing Pains (1985)",
+      "url": "https://www.imdb.com/title/tt0088527/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Critters 3 (1991)",
+      "url": "https://www.imdb.com/title/tt0101627/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Romeo + Juliet (1996)",
+      "url": "https://www.imdb.com/title/tt0117509/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Roseanne (1988)",
+      "url": "https://www.imdb.com/title/tt0094540/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "The New Lassie (1989)",
+      "url": "https://www.imdb.com/title/tt0096661/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "What's Eating Gilbert Grape (1993)",
+      "url": "https://www.imdb.com/title/tt0108550/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "The Quick and the Dead (1995)",
+      "url": "https://www.imdb.com/title/tt0114214/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "The Basketball Diaries (1995)",
+      "url": "https://www.imdb.com/title/tt0112461/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "The Man in the Iron Mask (1998)",
+      "url": "https://www.imdb.com/title/tt0120744/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "The Beach (2000)",
+      "url": "https://www.imdb.com/title/tt0163978/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Catch Me If You Can (2002)",
+      "url": "https://www.imdb.com/title/tt0264464/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Gangs of New York (2002)",
+      "url": "https://www.imdb.com/title/tt0217505/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "The Departed (2006)",
+      "url": "https://www.imdb.com/title/tt0407887/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Shutter Island (2010)",
+      "url": "https://www.imdb.com/title/tt1130884/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Inception (2010)",
+      "url": "https://www.imdb.com/title/tt1375666/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Django Unchained (2012)",
+      "url": "https://www.imdb.com/title/tt1853728/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "The Great Gatsby (2013)",
+      "url": "https://www.imdb.com/title/tt1343092/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Killers of the Flower Moon",
+      "startDate": "2023",
+      "url": "https://www.imdb.com/title/tt5537002/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Don't Look Up",
+      "startDate": "2021",
+      "url": "https://www.imdb.com/title/tt11259012"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "One Battle After Another",
+      "startDate": "2025",
+      "url": "https://www.imdb.com/title/tt22478326"
+    }
+  ],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Appian Way Productions"
+  }
+}

@@ -1,0 +1,923 @@
+{
+  "@context": "https://schema.org/",
+  "@type": "Person",
+  "name": "Leonardo DiCaprio",
+  "description": "American actor and film producer known for his work in biographical and period films. He is the recipient of numerous accolades, including an Academy Award, a British Academy Film Award, and three Golden Globe Awards.",
+  "jobTitle": "Actor, Film Producer",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/1/12/Leonardo_DiCaprio_crop_%28cropped%29.jpg",
+  "sameAs": [
+    "https://www.wikidata.org/entity/Q38111",
+    "https://www.imdb.com/name/nm0000136/",
+    "https://en.wikipedia.org/wiki/Leonardo_DiCaprio"
+  ],
+  "award": [
+    "Academy Award",
+    "British Academy Film Award",
+    "Golden Globe Award"
+  ],
+  "knowsAbout": [
+    "Environmental Awareness"
+  ],
+  "birthDate": "1974-11-11",
+  "birthPlace": "Los Angeles, California, USA",
+  "projects": [
+    {
+      "name": "Titanic",
+      "year": "1997",
+      "url": null,
+      "role": "Actor",
+      "department": null,
+      "status": "Released",
+      "description": "A star-crossed romance",
+      "episodes": []
+    },
+    {
+      "name": "The Revenant",
+      "year": "2015",
+      "url": null,
+      "role": "Actor",
+      "department": null,
+      "status": "Released",
+      "description": "Survival drama",
+      "episodes": []
+    },
+    {
+      "name": "Once Upon a Time in Hollywood",
+      "year": "2019",
+      "url": null,
+      "role": "Actor",
+      "department": null,
+      "status": "Released",
+      "description": "Comedy-drama",
+      "episodes": []
+    },
+    {
+      "name": "Don't Look Up",
+      "year": "2021",
+      "url": null,
+      "role": "Actor",
+      "department": null,
+      "status": "Released",
+      "description": "Comedy-drama",
+      "episodes": []
+    },
+    {
+      "name": "Killers of the Flower Moon",
+      "year": "2023",
+      "url": null,
+      "role": "Actor",
+      "department": null,
+      "status": "Released",
+      "description": "Crime drama",
+      "episodes": []
+    },
+    {
+      "name": "What's Eating Gilbert Grape",
+      "year": "1993",
+      "url": null,
+      "role": "Actor",
+      "department": null,
+      "status": "Released",
+      "description": null,
+      "episodes": []
+    },
+    {
+      "name": "The Quick and the Dead",
+      "year": "1995",
+      "url": null,
+      "role": "Actor",
+      "department": null,
+      "status": "Released",
+      "description": null,
+      "episodes": []
+    },
+    {
+      "name": "Romeo + Juliet",
+      "year": "1996",
+      "url": null,
+      "role": "Actor",
+      "department": null,
+      "status": "Released",
+      "description": null,
+      "episodes": []
+    },
+    {
+      "name": "Marvin's Room",
+      "year": "1996",
+      "url": null,
+      "role": "Actor",
+      "department": null,
+      "status": "Released",
+      "description": null,
+      "episodes": []
+    },
+    {
+      "name": "The Man in the Iron Mask",
+      "year": "1998",
+      "url": null,
+      "role": "Actor",
+      "department": null,
+      "status": "Released",
+      "description": null,
+      "episodes": []
+    },
+    {
+      "name": "The Beach",
+      "year": "2000",
+      "url": null,
+      "role": "Actor",
+      "department": null,
+      "status": "Released",
+      "description": null,
+      "episodes": []
+    },
+    {
+      "name": "Catch Me If You Can",
+      "year": "2002",
+      "url": null,
+      "role": "Actor",
+      "department": null,
+      "status": "Released",
+      "description": null,
+      "episodes": []
+    },
+    {
+      "name": "Gangs of New York",
+      "year": "2002",
+      "url": null,
+      "role": "Actor",
+      "department": null,
+      "status": "Released",
+      "description": null,
+      "episodes": []
+    },
+    {
+      "name": "The Aviator",
+      "year": "2004",
+      "url": null,
+      "role": "Actor",
+      "department": null,
+      "status": "Released",
+      "description": null,
+      "episodes": []
+    },
+    {
+      "name": "The Departed",
+      "year": "2006",
+      "url": null,
+      "role": "Actor",
+      "department": null,
+      "status": "Released",
+      "description": null,
+      "episodes": []
+    },
+    {
+      "name": "Blood Diamond",
+      "year": "2006",
+      "url": null,
+      "role": "Actor",
+      "department": null,
+      "status": "Released",
+      "description": null,
+      "episodes": []
+    },
+    {
+      "name": "Revolutionary Road",
+      "year": "2008",
+      "url": null,
+      "role": "Actor",
+      "department": null,
+      "status": "Released",
+      "description": null,
+      "episodes": []
+    },
+    {
+      "name": "Shutter Island",
+      "year": "2010",
+      "url": null,
+      "role": "Actor",
+      "department": null,
+      "status": "Released",
+      "description": null,
+      "episodes": []
+    },
+    {
+      "name": "Inception",
+      "year": "2010",
+      "url": null,
+      "role": "Actor",
+      "department": null,
+      "status": "Released",
+      "description": null,
+      "episodes": []
+    },
+    {
+      "name": "J. Edgar",
+      "year": "2011",
+      "url": null,
+      "role": "Actor",
+      "department": null,
+      "status": "Released",
+      "description": null,
+      "episodes": []
+    },
+    {
+      "name": "Django Unchained",
+      "year": "2012",
+      "url": null,
+      "role": "Actor",
+      "department": null,
+      "status": "Released",
+      "description": null,
+      "episodes": []
+    },
+    {
+      "name": "The Great Gatsby",
+      "year": "2013",
+      "url": null,
+      "role": "Actor",
+      "department": null,
+      "status": "Released",
+      "description": null,
+      "episodes": []
+    },
+    {
+      "name": "The Wolf of Wall Street",
+      "year": "2013",
+      "url": null,
+      "role": "Actor",
+      "department": null,
+      "status": "Released",
+      "description": null,
+      "episodes": []
+    },
+    {
+      "name": "The Revenant",
+      "year": "2015",
+      "url": null,
+      "role": "Actor",
+      "department": null,
+      "status": "Released",
+      "description": null,
+      "episodes": []
+    },
+    {
+      "name": "Don't Look Up",
+      "year": "2021",
+      "url": null,
+      "role": "Actor",
+      "department": null,
+      "status": "Released",
+      "description": null,
+      "episodes": []
+    },
+    {
+      "name": "One Battle After Another",
+      "year": "2025",
+      "url": null,
+      "role": "Actor",
+      "department": null,
+      "status": "Released",
+      "description": null,
+      "episodes": []
+    },
+    {
+      "name": "Yanuni",
+      "year": "2025",
+      "url": "https://www.rottentomatoes.com/m/yanuni",
+      "role": null,
+      "department": null,
+      "status": null,
+      "description": null,
+      "episodes": []
+    },
+    {
+      "name": "Ozi",
+      "year": "2023",
+      "url": "https://www.rottentomatoes.com/m/ozi_voice_of_the_forest",
+      "role": null,
+      "department": null,
+      "status": null,
+      "description": null,
+      "episodes": []
+    },
+    {
+      "name": "We Are Guardians",
+      "year": "2023",
+      "url": "https://www.rottentomatoes.com/m/we_are_guardians",
+      "role": null,
+      "department": null,
+      "status": null,
+      "description": null,
+      "episodes": []
+    },
+    {
+      "name": "Titanic: 25th Anniversary",
+      "year": "2023",
+      "url": "https://www.rottentomatoes.com/m/titanic_25th_anniversary",
+      "role": null,
+      "department": null,
+      "status": null,
+      "description": null,
+      "episodes": []
+    },
+    {
+      "name": "Fin",
+      "year": "2021",
+      "url": "https://www.rottentomatoes.com/m/fin_2021",
+      "role": null,
+      "department": null,
+      "status": null,
+      "description": null,
+      "episodes": []
+    },
+    {
+      "name": "The Loneliest Whale: The Search for 52",
+      "year": "2021",
+      "url": "https://www.rottentomatoes.com/m/the_loneliest_whale_the_search_for_52",
+      "role": null,
+      "department": null,
+      "status": null,
+      "description": null,
+      "episodes": []
+    },
+    {
+      "name": "And We Go Green",
+      "year": "2019",
+      "url": "https://www.rottentomatoes.com/m/and_we_go_green",
+      "role": null,
+      "department": null,
+      "status": null,
+      "description": null,
+      "episodes": []
+    },
+    {
+      "name": "Richard Jewell",
+      "year": "2019",
+      "url": "https://www.rottentomatoes.com/m/richard_jewell",
+      "role": null,
+      "department": null,
+      "status": null,
+      "description": null,
+      "episodes": []
+    },
+    {
+      "name": "Ice on Fire",
+      "year": "2019",
+      "url": "https://www.rottentomatoes.com/m/ice_on_fire_2019",
+      "role": null,
+      "department": null,
+      "status": null,
+      "description": null,
+      "episodes": []
+    },
+    {
+      "name": "Once Upon a Time... In Hollywood",
+      "year": "2019",
+      "url": "https://www.rottentomatoes.com/m/once_upon_a_time_in_hollywood",
+      "role": null,
+      "department": null,
+      "status": null,
+      "description": null,
+      "episodes": []
+    },
+    {
+      "name": "Sea of Shadows",
+      "year": "2019",
+      "url": "https://www.rottentomatoes.com/m/sea_of_shadows",
+      "role": null,
+      "department": null,
+      "status": null,
+      "description": null,
+      "episodes": []
+    },
+    {
+      "name": "Struggle: The Life and Lost Art of Szukalski",
+      "year": "2018",
+      "url": "https://www.rottentomatoes.com/m/struggle_the_life_and_lost_art_of_szukalski",
+      "role": null,
+      "department": null,
+      "status": null,
+      "description": null,
+      "episodes": []
+    },
+    {
+      "name": "Robin Hood",
+      "year": "2018",
+      "url": "https://www.rottentomatoes.com/m/robin_hood_2018",
+      "role": null,
+      "department": null,
+      "status": null,
+      "description": null,
+      "episodes": []
+    },
+    {
+      "name": "Delirium",
+      "year": "2018",
+      "url": "https://www.rottentomatoes.com/m/delirium_2017",
+      "role": null,
+      "department": null,
+      "status": null,
+      "description": null,
+      "episodes": []
+    },
+    {
+      "name": "Spielberg",
+      "year": "2017",
+      "url": "https://www.rottentomatoes.com/m/spielberg",
+      "role": null,
+      "department": null,
+      "status": null,
+      "description": null,
+      "episodes": []
+    },
+    {
+      "name": "The Ivory Game",
+      "year": "2016",
+      "url": "https://www.rottentomatoes.com/m/the_ivory_game",
+      "role": null,
+      "department": null,
+      "status": null,
+      "description": null,
+      "episodes": []
+    },
+    {
+      "name": "Live by Night",
+      "year": "2016",
+      "url": "https://www.rottentomatoes.com/m/live_by_night",
+      "role": null,
+      "department": null,
+      "status": null,
+      "description": null,
+      "episodes": []
+    },
+    {
+      "name": "Before the Flood",
+      "year": "2016",
+      "url": "https://www.rottentomatoes.com/m/before_the_flood_2016",
+      "role": null,
+      "department": null,
+      "status": null,
+      "description": null,
+      "episodes": []
+    },
+    {
+      "name": "Before the Flood: Trailer",
+      "year": "2016",
+      "url": "https://www.rottentomatoes.com/m/before_the_flood_ii",
+      "role": null,
+      "department": null,
+      "status": null,
+      "description": null,
+      "episodes": []
+    },
+    {
+      "name": "Catching the Sun",
+      "year": "2015",
+      "url": "https://www.rottentomatoes.com/m/catching_the_sun_2016",
+      "role": null,
+      "department": null,
+      "status": null,
+      "description": null,
+      "episodes": []
+    },
+    {
+      "name": "Cowspiracy: The Sustainability Secret",
+      "year": "2014",
+      "url": "https://www.rottentomatoes.com/m/cowspiracy_the_sustainability_secret",
+      "role": null,
+      "department": null,
+      "status": null,
+      "description": null,
+      "episodes": []
+    }
+  ],
+  "episodes": [],
+  "engagements": [
+    {
+      "type": "United Nations Messenger of Peace",
+      "title": "United Nations Messenger of Peace",
+      "organization": "United Nations",
+      "date": "2014",
+      "summary": "Promotes environmental awareness and other charitable causes",
+      "url": null
+    }
+  ],
+  "credits": [
+    {
+      "title": "Titanic",
+      "year": "1997",
+      "url": null,
+      "role": "Jack Dawson",
+      "department": "Acting",
+      "type": "Film"
+    },
+    {
+      "title": "The Revenant",
+      "year": "2015",
+      "url": "Hugh Glass",
+      "department": "Acting",
+      "type": "Film"
+    },
+    {
+      "title": "Once Upon a Time in Hollywood",
+      "year": "2019",
+      "url": null,
+      "role": "Rick Dalton",
+      "department": "Acting",
+      "type": "Film"
+    },
+    {
+      "title": "Don't Look Up",
+      "year": "2021",
+      "url": null,
+      "role": "Dr. Randall Mindy",
+      "department": "Acting",
+      "type": "Film"
+    },
+    {
+      "title": "Killers of the Flower Moon",
+      "year": "2023",
+      "url": null,
+      "role": "Ernest Burkhart",
+      "department": "Acting",
+      "type": "Film"
+    },
+    {
+      "title": "What's Eating Gilbert Grape",
+      "year": "1993",
+      "url": null,
+      "role": "Arnie Grape",
+      "department": "Acting",
+      "type": "Film"
+    },
+    {
+      "title": "The Quick and the Dead",
+      "year": "1995",
+      "url": null,
+      "role": "The Kid",
+      "department": "Acting",
+      "type": "Film"
+    },
+    {
+      "title": "Total Eclipse",
+      "year": "1995",
+      "url": null,
+      "role": "Arthur Rimbaud",
+      "department": "Acting",
+      "type": "Film"
+    },
+    {
+      "title": "The Basketball Diaries",
+      "year": "1995",
+      "url": null,
+      "role": "Jim Carroll",
+      "department": "Acting",
+      "type": "Film"
+    },
+    {
+      "title": "Romeo + Juliet",
+      "year": "1996",
+      "url": null,
+      "role": "Romeo Montague",
+      "department": "Acting",
+      "type": "Film"
+    },
+    {
+      "title": "Marvin's Room",
+      "year": "1996",
+      "url": null,
+      "role": "Hank",
+      "department": "Acting",
+      "type": "Film"
+    },
+    {
+      "title": "The Man in the Iron Mask",
+      "year": "1998",
+      "url": null,
+      "role": "King Louis XIV/Philippe",
+      "department": "Acting",
+      "type": "Film"
+    },
+    {
+      "title": "Celebrity",
+      "year": "1998",
+      "url": null,
+      "role": "Brandon Darrow",
+      "department": "Acting",
+      "type": "Film"
+    },
+    {
+      "title": "The Beach",
+      "year": "2000",
+      "url": null,
+      "role": "Richard",
+      "department": "Acting",
+      "type": "Film"
+    },
+    {
+      "title": "Catch Me If You Can",
+      "year": "2002",
+      "url": null,
+      "role": "Frank W. Abagnale",
+      "department": "Acting",
+      "type": "Film"
+    },
+    {
+      "title": "Gangs of New York",
+      "year": "2002",
+      "url": null,
+      "role": "Amsterdam Vallon",
+      "department": "Acting",
+      "type": "Film"
+    },
+    {
+      "title": "The Aviator",
+      "year": "2004",
+      "url": null,
+      "role": "Howard Hughes",
+      "department": "Acting",
+      "type": "Film"
+    },
+    {
+      "title": "The Departed",
+      "year": "2006",
+      "url": null,
+      "role": "Billy Costigan",
+      "department": "Acting",
+      "type": "Film"
+    },
+    {
+      "title": "Blood Diamond",
+      "year": "2006",
+      "url": null,
+      "role": "Danny Archer",
+      "department": "Acting",
+      "type": "Film"
+    },
+    {
+      "title": "Revolutionary Road",
+      "year": "2008",
+      "url": null,
+      "role": "Frank Wheeler",
+      "department": "Acting",
+      "type": "Film"
+    },
+    {
+      "title": "Body of Lies",
+      "year": "2008",
+      "url": null,
+      "role": "Roger Ferris",
+      "department": "Acting",
+      "type": "Film"
+    },
+    {
+      "title": "Shutter Island",
+      "year": "2010",
+      "url": null,
+      "role": "Teddy Daniels",
+      "department": "Acting",
+      "type": "Film"
+    },
+    {
+      "title": "Inception",
+      "year": "2010",
+      "url": null,
+      "role": "Dom Cobb",
+      "department": "Acting",
+      "type": "Film"
+    },
+    {
+      "title": "J. Edgar",
+      "year": "2011",
+      "url": null,
+      "role": "J. Edgar Hoover",
+      "department": "Acting",
+      "type": "Film"
+    },
+    {
+      "title": "Django Unchained",
+      "year": "2012",
+      "url": null,
+      "role": "Calvin Candie",
+      "department": "Acting",
+      "type": "Film"
+    },
+    {
+      "title": "The Great Gatsby",
+      "year": "2013",
+      "url": null,
+      "role": "Jay Gatsby",
+      "department": "Acting",
+      "type": "Film"
+    },
+    {
+      "title": "The Wolf of Wall Street",
+      "year": "2013",
+      "url": null,
+      "role": "Jordan Belfort",
+      "department": "Acting",
+      "type": "Film"
+    },
+    {
+      "title": "The Revenant",
+      "year": "2015",
+      "url": null,
+      "role": "Hugh Glass",
+      "department": "Acting",
+      "type": "Film"
+    },
+    {
+      "title": "Don't Look Up",
+      "year": "2021",
+      "url": null,
+      "role": "Dr. Randall Mindy",
+      "department": "Acting",
+      "type": "Film"
+    },
+    {
+      "title": "One Battle After Another",
+      "year": "2025",
+      "url": null,
+      "role": "Bob Ferguson",
+      "department": "Acting",
+      "type": "Film"
+    },
+    {
+      "title": "This Boy's Life",
+      "year": "1993",
+      "url": null,
+      "role": "Tobias Wolff",
+      "department": "Acting",
+      "type": "Film"
+    },
+    {
+      "title": "Yanuni",
+      "year": "2025",
+      "url": "https://www.rottentomatoes.com/m/yanuni",
+      "role": null,
+      "department": null,
+      "type": "Movie"
+    },
+    {
+      "title": "Ozi",
+      "year": "2023",
+      "url": "https://www.rottentomatoes.com/m/ozi_voice_of_the_forest",
+      "role": null,
+      "department": null,
+      "type": "Movie"
+    },
+    {
+      "title": "We Are Guardians",
+      "year": "2023",
+      "url": "https://www.rottentomatoes.com/m/we_are_guardians",
+      "role": null,
+      "department": null,
+      "type": "Movie"
+    },
+    {
+      "title": "Titanic: 25th Anniversary",
+      "year": "2023",
+      "url": "https://www.rottentomatoes.com/m/titanic_25th_anniversary",
+      "role": null,
+      "department": null,
+      "type": "Movie"
+    },
+    {
+      "title": "Fin",
+      "year": "2021",
+      "url": "https://www.rottentomatoes.com/m/fin_2021",
+      "role": null,
+      "department": null,
+      "type": "Movie"
+    },
+    {
+      "title": "The Loneliest Whale: The Search for 52",
+      "year": "2021",
+      "url": "https://www.rottentomatoes.com/m/the_loneliest_whale_the_search_for_52",
+      "role": null,
+      "department": null,
+      "type": "Movie"
+    },
+    {
+      "title": "And We Go Green",
+      "year": "2019",
+      "url": "https://www.rottentomatoes.com/m/and_we_go_green",
+      "role": null,
+      "department": null,
+      "type": "Movie"
+    },
+    {
+      "title": "Richard Jewell",
+      "year": "2019",
+      "url": "https://www.rottentomatoes.com/m/richard_jewell",
+      "role": null,
+      "department": null,
+      "type": "Movie"
+    },
+    {
+      "title": "Ice on Fire",
+      "year": "2019",
+      "url": "https://www.rottentomatoes.com/m/ice_on_fire_2019",
+      "role": null,
+      "department": null,
+      "type": "Movie"
+    },
+    {
+      "title": "Once Upon a Time... In Hollywood",
+      "year": "2019",
+      "url": "https://www.rottentomatoes.com/m/once_upon_a_time_in_hollywood",
+      "role": null,
+      "department": null,
+      "type": "Movie"
+    },
+    {
+      "title": "Sea of Shadows",
+      "year": "2019",
+      "url": "https://www.rottentomatoes.com/m/sea_of_shadows",
+      "role": null,
+      "department": null,
+      "type": "Movie"
+    },
+    {
+      "title": "Struggle: The Life and Lost Art of Szukalski",
+      "year": "2018",
+      "url": "https://www.rottentomatoes.com/m/struggle_the_life_and_lost_art_of_szukalski",
+      "role": null,
+      "department": null,
+      "type": "Movie"
+    },
+    {
+      "title": "Robin Hood",
+      "year": "2018",
+      "url": "https://www.rottentomatoes.com/m/robin_hood_2018",
+      "role": null,
+      "department": null,
+      "type": "Movie"
+    },
+    {
+      "title": "Delirium",
+      "year": "2018",
+      "url": "https://www.rottentomatoes.com/m/delirium_2017",
+      "role": null,
+      "department": null,
+      "type": "Movie"
+    },
+    {
+      "title": "Spielberg",
+      "year": "2017",
+      "url": "https://www.rottentomatoes.com/m/spielberg",
+      "role": null,
+      "department": null,
+      "type": "Movie"
+    },
+    {
+      "title": "The Ivory Game",
+      "year": "2016",
+      "url": "https://www.rottentomatoes.com/m/the_ivory_game",
+      "role": null,
+      "department": null,
+      "type": "Movie"
+    },
+    {
+      "title": "Live by Night",
+      "year": "2016",
+      "url": "https://www.rottentomatoes.com/m/live_by_night",
+      "role": null,
+      "department": null,
+      "type": "Movie"
+    },
+    {
+      "title": "Before the Flood",
+      "year": "2016",
+      "url": "https://www.rottentomatoes.com/m/before_the_flood_2016",
+      "role": null,
+      "department": null,
+      "type": "Movie"
+    },
+    {
+      "title": "Before the Flood: Trailer",
+      "year": "2016",
+      "url": "https://www.rottentomatoes.com/m/before_the_flood_ii",
+      "role": null,
+      "department": null,
+      "type": "Movie"
+    },
+    {
+      "title": "Catching the Sun",
+      "year": "2015",
+      "url": "https://www.rottentomatoes.com/m/catching_the_sun_2016",
+      "role": null,
+      "department": null,
+      "type": "Movie"
+    },
+    {
+      "title": "Cowspiracy: The Sustainability Secret",
+      "year": "2014",
+      "url": "https://www.rottentomatoes.com/m/cowspiracy_the_sustainability_secret",
+      "role": null,
+      "department": null,
+      "type": "Movie"
+    }
+  ]
+}

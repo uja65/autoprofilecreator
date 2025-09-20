@@ -1,0 +1,182 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Leonardo DiCaprio",
+  "description": "American actor and film producer known for his work in biographical and period films. He is the recipient of numerous accolades, including an Academy Award, a British Academy Film Award, and three Golden Globe Awards.",
+  "jobTitle": "Actor, Film Producer",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Leonardo_DiCaprio_crop_%28cropped%29.jpg/250px-Leonardo_DiCaprio_crop_%28cropped%29.jpg",
+  "sameAs": [
+    "https://en.wikipedia.org/wiki/Leonardo_DiCaprio",
+    "https://www.imdb.com/name/nm0000136/"
+  ],
+  "performerIn": [
+    {
+      "@type": "CreativeWork",
+      "name": "Titanic",
+      "startDate": "1997",
+      "url": "https://www.imdb.com/title/tt0120338/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "The Wolf of Wall Street",
+      "startDate": "2013",
+      "url": "https://www.imdb.com/title/tt0993846/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "The Revenant",
+      "startDate": "2015",
+      "url": "https://www.imdb.com/title/tt1606361/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Once Upon a Time in Hollywood",
+      "startDate": "2019",
+      "url": "https://www.imdb.com/title/tt7131622/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Don't Look Up",
+      "startDate": "2021",
+      "url": "https://www.imdb.com/title/tt11246066/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Killers of the Flower Moon",
+      "startDate": "2023",
+      "url": "https://www.imdb.com/title/tt5537002/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Romeo + Juliet",
+      "startDate": "1996",
+      "url": "https://www.imdb.com/title/tt0117509/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "The Man in the Iron Mask",
+      "startDate": "1998",
+      "url": "https://www.imdb.com/title/tt0120744/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "The Beach",
+      "startDate": "2000",
+      "url": "https://www.imdb.com/title/tt0163978/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Catch Me If You Can",
+      "startDate": "2002",
+      "url": "https://www.imdb.com/title/tt0264464/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Gangs of New York",
+      "startDate": "2002",
+      "url": "https://www.imdb.com/title/tt0217505/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "The Departed",
+      "startDate": "2006",
+      "url": "https://www.imdb.com/title/tt0407887/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Blood Diamond",
+      "startDate": "2006",
+      "url": "https://www.imdb.com/title/tt0450272/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Revolutionary Road",
+      "startDate": "2008",
+      "url": "https://www.imdb.com/title/tt0450272/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Body of Lies",
+      "startDate": "2008",
+      "url": "https://www.imdb.com/title/tt0814248/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Shutter Island",
+      "startDate": "2010",
+      "url": "https://www.imdb.com/title/tt1130884/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Inception",
+      "startDate": "2010",
+      "url": "https://www.imdb.com/title/tt1375666/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "J. Edgar",
+      "startDate": "2011",
+      "url": "https://www.imdb.com/title/tt1500324/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Django Unchained",
+      "startDate": "2012",
+      "url": "https://www.imdb.com/title/tt1853728/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "The Great Gatsby",
+      "startDate": "2013",
+      "url": "https://www.imdb.com/title/tt1343092/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "What's Eating Gilbert Grape",
+      "startDate": "1993",
+      "url": "https://www.imdb.com/title/tt0108550/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "The Quick and the Dead",
+      "startDate": "1995",
+      "url": "https://www.imdb.com/title/tt0114214/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "The Basketball Diaries",
+      "startDate": "1995",
+      "url": "https://www.imdb.com/title/tt0112461/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Marvin's Room",
+      "startDate": "1996",
+      "url": "https://www.imdb.com/title/tt0116923/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "The Aviator",
+      "startDate": "2004",
+      "url": "https://www.imdb.com/title/tt0317813/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "One Battle After Another",
+      "startDate": "2025",
+      "url": null
+    }
+  ],
+  "worksFor": [
+    "Appian Way Productions",
+    "Leonardo DiCaprio Foundation"
+  ],
+  "knowsAbout": "Environmental awareness",
+  "award": [
+    "Academy Award",
+    "British Academy Film Award",
+    "Golden Globe Award"
+  ],
+  "birthDate": "1974-11-11",
+  "birthPlace": "Los Angeles, California, USA"
+}
